@@ -20,8 +20,10 @@ const NotesPage = async () => {
       <ul>
         {notes.map((note) => (
           <li key={note.id}>
-            <h2>{note.title}</h2>
-            <p>{note.text}</p>
+            <Link href={`/notes/${note.slug}`}>
+              <h2>{note.title}</h2>
+              <p>{note.text}</p>
+            </Link>
           </li>
         ))}
       </ul>

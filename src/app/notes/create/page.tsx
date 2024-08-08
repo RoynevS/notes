@@ -1,4 +1,5 @@
 import { createNoteAction } from "@/actions/noteActions";
+import { redirect } from "next/navigation";
 
 const CreateNotePage = () => {
   return (
@@ -14,6 +15,14 @@ const CreateNotePage = () => {
           <textarea name="text" id="text"></textarea>
         </div>
         <button type="submit">Create Note</button>
+      </form>
+      <form
+        action={async () => {
+          "use server";
+          redirect("/notes");
+        }}
+      >
+        <button>Cancel</button>
       </form>
     </main>
   );
